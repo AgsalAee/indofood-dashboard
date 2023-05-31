@@ -16,17 +16,6 @@ directory and run the following command
 
 `php artisan migrate`
 
-### Generate some test data
-
-Once you have all your database tables setup you can then generate some test data
-which will come from our pre-made database table seeders.
-In order to do so, in your terminal run the following command
-
-`php artisan db:seed`
-
-N.B. If you run this command twice, all the test data will be duplicated and added to the existing table data, if you want to avoid having duplicate test data please
-make sure to `truncate` the following `datafeeds` table in your database.
-
 ### Compile the front-end
 
 In order to compile all the CSS and JS assets for the front-end of this site you need to install NPM dependencies. To do that, open the terminal, type npm install and press the `Enter` key.
