@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataFeedController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataMaterialController;
+use App\Http\Controllers\DataProductController;
 use App\Http\Controllers\PackagingPOController;
 use App\Models\PackagingPO;
 
@@ -25,14 +27,18 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/json-data-feed', [DataFeedController::class, 'getDataFeed'])->name('json_data_feed');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    // Route::get('PackagingPO', [PackagingPOController::class, 'index']);
-    // Route::get('/PackagingPO/export_excel', [PackagingPOController::class, 'export_excel']);
-    // Route::post('/PackagingPO/import_excel', [PackagingPOController::class, 'import_excel']);
+    // Route::post('/DataMaterial/import_excel', [ProductController::class, 'import_excel']);
+    // Route::resource('/DataMaterial', ProductController::class);
 
     Route::controller(PackagingPOController::class)->group(function () {
-        Route::get('PackagingPO', 'index')->name('PackagingPoIndex');
-        // Route::get('PackagingPO/export_excel', 'export_excel');
-        Route::post('PackagingPO/import_excel', 'import_excel');
+        Route::get('/PackagingPO', 'index')->name('PackagingPoIndex');
+        Route::get('/PackagingPO/export_excel', 'export_excel');
+        Route::post('/PackagingPO/import_excel', 'import_excel');
+    });
+
+    Route::controller(DataProductController::class)->group(function () {
+        Route::post('/DataProduct/import_excel', 'import_excel');
+        Route::get('/DataProduct', 'index')->name('DataProductIndex');
     });
 
     Route::fallback(function () {
