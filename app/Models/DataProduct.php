@@ -35,8 +35,8 @@ class DataProduct extends Model
         'product_id' => 'integer'
     ];
 
-    // public function PackingReports()
-    // {
-    //     return $this->hasMany(PackingReport::class);
-    // }
+    public function PackingReports()
+    {
+        return $this->hasMany(PackingReport::class);
+    }
 }

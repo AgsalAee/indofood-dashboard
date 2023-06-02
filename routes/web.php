@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataMaterialController;
 use App\Http\Controllers\DataProductController;
 use App\Http\Controllers\PackagingPOController;
+use App\Http\Controllers\PackingReportController;
 use App\Models\PackagingPO;
 
 /*
@@ -27,8 +28,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/json-data-feed', [DataFeedController::class, 'getDataFeed'])->name('json_data_feed');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    // Route::post('/DataMaterial/import_excel', [ProductController::class, 'import_excel']);
-    // Route::resource('/DataMaterial', ProductController::class);
 
     Route::controller(PackagingPOController::class)->group(function () {
         Route::get('/PackagingPO', 'index')->name('PackagingPoIndex');
@@ -39,6 +38,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::controller(DataProductController::class)->group(function () {
         Route::post('/DataProduct/import_excel', 'import_excel');
         Route::get('/DataProduct', 'index')->name('DataProductIndex');
+    });
+
+    Route::controller(PackingReportController::class)->group(function () {
+        Route::post('/PackingReport/import_excel', 'import_excel');
+        Route::get('/PackingReport', 'index')->name('PackingReportIndex');
     });
 
     Route::fallback(function () {
