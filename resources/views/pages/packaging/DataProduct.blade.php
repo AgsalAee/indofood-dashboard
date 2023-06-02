@@ -21,14 +21,14 @@
             </button>
             {{-- <button type="submit" class="btn btn-primary">IMPORT</button> --}}
         </form>
-        <div class="py-3 grid grid-cols-1 md:grid-cols-3 grid-flow-row gap-6">
+        {{-- <div class="py-3 grid grid-cols-1 md:grid-cols-3 grid-flow-row gap-6">
             <div class="px-4 py-2 bg-blue-600 text-gray-100 rounded-md mr-4 hover:bg-blue-700"><a
                     href="DataMaterial/Create">create</a></div>
             <div class="px-4 py-2 bg-blue-600 text-gray-100 rounded-md mr-4 hover:bg-blue-700"><a
                     href="https://www.linkedin.com/company/digitalocean">LinkedIn</a></div>
             <div class="px-4 py-2 bg-blue-600 text-gray-100 rounded-md mr-4 hover:bg-blue-700"><a
                     href="https://instagram.com/thedigitalocean">Instagram</a></div>
-        </div>
+        </div> --}}
     </div>
 
     {{-- <div class="w-3/4 lg:w-1/2 mx-auto rounded-md bg-gray-200 shadow-lg m-20 p-10 text-center"> --}}

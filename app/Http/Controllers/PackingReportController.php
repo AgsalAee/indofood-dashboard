@@ -11,7 +11,7 @@ class PackingReportController extends Controller
 {
     public function index()
     {
-        $reports = PackingReport::paginate(2);
+        $reports = PackingReport::paginate(10);
 
         return view('pages/packaging/PackingReport', compact('reports'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -31,6 +31,6 @@ class PackingReportController extends Controller
         $file->move('file_packaging', $nama_file);
         Excel::import(new PackingReportImport, public_path('/file_packaging/' . $nama_file));
         // membuat notifikasi dengan session
-        return redirect('pages/packaging/PackingReport');
+        return redirect('PackingReport');
     }
 }

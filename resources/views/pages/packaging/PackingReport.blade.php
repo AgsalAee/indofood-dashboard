@@ -49,6 +49,9 @@
                     <th scope="col" class="px-6 py-3">
                         Dus Shift 1
                     </th>
+                    {{-- <th scope="col" class="px-6 py-3">
+                        Total PCS Shift 1
+                    </th> --}}
                     <th scope="col" class="px-6 py-3">
                         Dus Shift 2
                     </th>
@@ -59,9 +62,10 @@
                     <tr class="bg-white border-b">
                         <td class="pl-5">{{ $report->product_id }}</td>
                         <td class="pl-5">{{ $report->name_product }}</td>
-                        <td class="pl-5">{{ $report->total_product }}</td>
-                        <td class="pl-5">{{ $report->packing_boxShA }}</td>
-                        <td class="pl-5">{{ $report->packing_boxShB }}</td>
+                        <td class="pl-5">{{ $tot = $report->total_product }}</td>
+                        <td class="pl-5">{{ $boxA = $report->packing_boxShA }}</td>
+                        {{-- <td class="pl-5">{{ $totA = $tot * $boxA }}</td> --}}
+                        <td class="pl-5">{{ $boxB = $report->packing_boxShB }}</td>
                     </tr>
                 @endforeach
             </tbody>
