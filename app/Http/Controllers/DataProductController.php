@@ -13,7 +13,7 @@ class DataProductController extends Controller
 {
     public function index()
     {
-        $products = DataProduct::latest()->paginate(20);
+        $products = DataProduct::latest()->paginate(15);
 
         return view('pages.packaging.DataProduct', compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);

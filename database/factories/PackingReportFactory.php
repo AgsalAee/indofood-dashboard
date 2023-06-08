@@ -18,6 +18,7 @@ class PackingReportFactory extends Factory
     {
         return [
             //
+
         ];
     }
 }

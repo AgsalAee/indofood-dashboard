@@ -39,4 +39,9 @@ class DataProduct extends Model
     {
         return $this->hasMany(PackingReport::class);
     }
+
+    public function MachineNumbers()
+    {
+        return $this->belongsToMany(MachineNumber::class);
+    }
 }
