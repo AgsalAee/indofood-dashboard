@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\DataProduct;
-use Faker\Factory;
+use App\Models\PackingReport;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DataProductSeeder extends Seeder
+class PackingReportSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +15,7 @@ class DataProductSeeder extends Seeder
      */
     public function run()
     {
-        DataProduct::factory(50)->create();
         //
+        PackingReport::factory(20)->create();
     }
 }

@@ -9,12 +9,17 @@ class PackingReport extends Model
 {
     use HasFactory;
     protected $table = "packing_reports";
+    // protected $primaryKey = 'uuid';
     protected $fillable = [
         'product_id',
         'name_product',
         'total_product',
         'packing_boxShA',
         'packing_boxShB'
+    ];
+
+    protected $hidden = [
+        'report_id'
     ];
 
     protected $cast = [

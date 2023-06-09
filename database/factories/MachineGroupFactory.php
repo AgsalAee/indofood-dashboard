@@ -17,7 +17,9 @@ class MachineGroupFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'group_id' => fake()->unique()->numberBetween(1, 100),
+            'machine_group_line' => fake()->sentence(2),
+            'machine_group_type' => fake()->sentence(2),
         ];
     }
 }

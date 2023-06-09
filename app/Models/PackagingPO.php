@@ -11,10 +11,10 @@ class PackagingPO extends Model
 
     protected $table = "packaging_p_o_s";
     protected $fillable = [
-        'Process',
-        'FinishDate',
-        'Shift',
-        'NumberMaterial',
-        'Quantity',
+        'process_id',
+        'finish_date',
+        'shift',
+        'number_material',
+        'quantity',
     ];
 }

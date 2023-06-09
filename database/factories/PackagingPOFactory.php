@@ -17,7 +17,11 @@ class PackagingPOFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'process_id' => fake()->unique()->numberBetween(1, 150),
+            'finish_date' => fake()->date("Y-m-d", "now"),
+            'shift' => fake()->sentence(1),
+            'number_material' => fake()->numberBetween(1000, 99999999),
+            'quantity' => fake()->numberBetween(0, 999999999),
         ];
     }
 }

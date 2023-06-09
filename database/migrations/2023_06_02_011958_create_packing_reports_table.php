@@ -2,7 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -14,7 +16,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('packing_reports', function (Blueprint $table) {
-            $table->unsignedBigInteger('product_id')->primary();
+            // $table->uuid('uuid')->primary()->default(DB::raw("uuid_generate_v4()"));
+            // $table->uuid('uuid')->default(Str::uuid())->primary();
+            $table->id('report_id');
+            $table->unsignedBigInteger('product_id');
             $table->string('name_product');
             $table->string('total_product');
             $table->integer('packing_boxShA');
@@ -23,6 +28,7 @@ return new class extends Migration
 
             $table->foreign('product_id')->references('product_id')->on('data_products');
         });
+        // DB::statement('UPDATE packing_reports SET uuid = ' . DB::getPdo()->quote(Str::uuid()) . ' WHERE uuid IS NULL');
     }
 
     /**

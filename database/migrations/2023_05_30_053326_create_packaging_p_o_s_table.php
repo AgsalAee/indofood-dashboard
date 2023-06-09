@@ -14,11 +14,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('packaging_p_o_s', function (Blueprint $table) {
-            $table->unsignedBigInteger('Process')->primary();
-            $table->date('FinishDate')->nullable();
-            $table->string('Shift', 3)->nullable();
-            $table->string('NumberMaterial')->nullable();
-            $table->integer('Quantity')->nullable();
+            $table->unsignedBigInteger('process_id')->primary();
+            $table->date('finish_date')->nullable();
+            $table->string('shift')->nullable();
+            $table->string('number_material')->nullable();
+            $table->integer('quantity')->nullable();
             $table->timestamps();
         });
     }

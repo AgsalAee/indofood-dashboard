@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\DataProduct;
-use Faker\Factory;
+use App\Models\MachineGroup;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DataProductSeeder extends Seeder
+class MachineGroupSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +15,6 @@ class DataProductSeeder extends Seeder
      */
     public function run()
     {
-        DataProduct::factory(50)->create();
-        //
+        MachineGroup::factory(10)->create();
     }
 }
