@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\MachineGroup;
+use App\Models\MaterialType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class MachineGroupSeeder extends Seeder
+class MaterialTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class MachineGroupSeeder extends Seeder
      */
     public function run()
     {
-        MachineGroup::factory(4)->create();
+        MaterialType::factory(50)->create();
     }
 }
