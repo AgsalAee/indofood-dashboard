@@ -14,7 +14,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('packaging_p_o_s', function (Blueprint $table) {
-            $table->unsignedBigInteger('process_id')->primary();
+            $table->unsignedBigInteger('process_id')->primary(); // aslinya mengambil dr tabel PO keseluruhan, tetapi ini masih menggunakan excel maual dan upload manual
             $table->date('finish_date')->nullable();
             $table->string('shift')->nullable();
             $table->string('number_material')->nullable();

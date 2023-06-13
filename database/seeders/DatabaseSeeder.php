@@ -19,10 +19,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             DashboardTableSeeder::class,
             UserAdminSeeder::class,
+            MaterialTypeSeeder::class,
             DataProductSeeder::class,
             PackingReportSeeder::class,
             MachineGroupSeeder::class,
             PackagingPOSeeder::class,
+            MachineNumberSeeder::class
         ]);
     }
 }
