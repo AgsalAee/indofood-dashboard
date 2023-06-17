@@ -34,4 +34,9 @@ class MachineNumber extends Model
         return $this->belongsTo(MachineGroup::class);
         # code...
     }
+
+    public function Schedule()
+    {
+        return $this->belongsTo(ScheduleProduction::class);
+    }
 }
