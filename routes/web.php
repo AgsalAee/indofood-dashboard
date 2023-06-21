@@ -7,6 +7,7 @@ use App\Http\Controllers\DataMaterialController;
 use App\Http\Controllers\DataProductController;
 use App\Http\Controllers\PackagingPOController;
 use App\Http\Controllers\PackingReportController;
+use App\Models\DataProduct;
 use App\Models\PackagingPO;
 
 /*
@@ -38,6 +39,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::controller(DataProductController::class)->group(function () {
         Route::post('/DataProduct/import_excel', 'import_excel');
         Route::get('/DataProduct', 'index')->name('DataProductIndex');
+        Route::get('/DataProduct/Create', 'create')->name('DataProductCreate');
+        Route::post('/DataProduct/Store', 'store')->name('DataProductStore');
     });
 
     Route::controller(PackingReportController::class)->group(function () {

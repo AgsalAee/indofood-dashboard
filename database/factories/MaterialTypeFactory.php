@@ -16,11 +16,12 @@ class MaterialTypeFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'product_mat_id' => fake()->unique()->numberBetween($min = 1000, $max = 99999),
-            'material_name' => fake()->sentence(1),
-            'product_description' => fake()->sentence(4),
-            'material_type' => fake()->sentence(2)
-        ];
+        return [];
+        // return [
+        //     'product_mat_id' => fake()->unique()->numberBetween($min = 1000, $max = 99999),
+        //     'material_name' => fake()->sentence(1),
+        //     'product_description' => fake()->sentence(4),
+        //     'material_type' => fake()->sentence(2)
+        // ];
     }
 }

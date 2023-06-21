@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             DashboardTableSeeder::class,
             UserAdminSeeder::class,
-            MaterialTypeSeeder::class,
+            // MaterialTypeSeeder::class,
             DataProductSeeder::class,
             PackingReportSeeder::class,
             MachineGroupSeeder::class,

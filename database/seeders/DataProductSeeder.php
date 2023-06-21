@@ -17,7 +17,7 @@ class DataProductSeeder extends Seeder
      */
     public function run()
     {
-        DataProduct::factory(3)->create();
+        DataProduct::factory(30)->create();
         // DataProduct::factory(50)->create()->each(function ($dataproduct) {
         //     $dataproduct->MaterialType()->make();
         // });

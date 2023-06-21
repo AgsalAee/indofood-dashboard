@@ -22,7 +22,7 @@ class DataProductController extends Controller
 
     public function create()
     {
-        return view('pages.packaging.DataProduct/Create');
+        return view('pages.packaging.DataProduct.create');
     }
 
     public function store(Request $request): RedirectResponse
@@ -32,12 +32,16 @@ class DataProductController extends Controller
             'product_name' => 'required',
             'product_total' => 'required',
             'product_mix_weight' => 'required',
-            'RPM' => 'required',
+            'product_addition_weight' => 'required',
+            'product_si_weight' => 'required',
+            'product_etiquete_weight' => 'required',
+            'product_RPM' => 'required',
+            'product_pitch' => 'required',
         ]);
 
         DataProduct::create($request->all());
 
-        return redirect()->route('DataProduct')
+        return redirect()->route('DataProductIndex')
             ->with('success', 'Product created successfully.');
     }
 

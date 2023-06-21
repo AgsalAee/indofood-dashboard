@@ -26,7 +26,6 @@ class DataProduct extends Model
     ];
 
     protected $hidden = [
-        'product_id',
         'created_at',
         'updated_at'
     ];
@@ -40,10 +39,10 @@ class DataProduct extends Model
         return $this->hasMany(PackingReport::class);
     }
 
-    public function MaterialType()
-    {
-        return $this->hasOne(MaterialType::class);
-    }
+    // public function MaterialType()
+    // {
+    //     return $this->hasOne(MaterialType::class);
+    // }
 
     public function MachineNumbers()
     {

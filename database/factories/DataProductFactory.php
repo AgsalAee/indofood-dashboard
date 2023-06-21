@@ -19,9 +19,10 @@ class DataProductFactory extends Factory
      */
     public function definition()
     {
-        $materialtype = MaterialType::inRandomOrder()->distinct()->first();
+        // $materialtype = MaterialType::inRandomOrder()->distinct()->first();
         return [
-            'product_id' => $materialtype->product_mat_id,
+            // 'product_id' => $materialtype->product_mat_id,
+            'product_id' => fake()->unique()->numberBetween($min = 1000, $max = 99999),
             'product_name' =>  fake()->sentence(2),
             'product_total' => fake()->numberBetween(1000, 3500),
             'product_mix_weight' => fake()->randomFloat(2, 0.01, 16),

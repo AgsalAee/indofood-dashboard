@@ -25,7 +25,7 @@ return new class extends Migration
             $table->integer('product_pitch')->nullable();
             $table->timestamps();
 
-            $table->foreign('product_id')->references('product_mat_id')->on('material_types');
+            // $table->foreign('product_id')->references('product_mat_id')->on('material_types');
         });
     }
 
@@ -36,9 +36,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('data_products', function (Blueprint $table) {
-            $table->dropConstrainedForeignId('product_id');
-        });
+        // Schema::table('data_products', function (Blueprint $table) {
+        //     $table->dropConstrainedForeignId('product_id');
+        // });
         Schema::dropIfExists('data_products');
     }
 };
