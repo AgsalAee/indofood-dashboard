@@ -7,8 +7,10 @@ use App\Http\Controllers\DataMaterialController;
 use App\Http\Controllers\DataProductController;
 use App\Http\Controllers\PackagingPOController;
 use App\Http\Controllers\PackingReportController;
+use App\Http\Controllers\ProcessOrderController;
 use App\Models\DataProduct;
 use App\Models\PackagingPO;
+use App\Models\ProcessOrder;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,11 +38,19 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::post('/PackagingPO/import_excel', 'import_excel');
     });
 
+    Route::controller(ProcessOrderController::class)->group(function () {
+        Route::resource('/ProcessOrder', ProcessOrderController::class);
+        Route::post('/ProcessOrder/import_excel', 'import_excel');
+    });
+
     Route::controller(DataProductController::class)->group(function () {
         Route::post('/DataProduct/import_excel', 'import_excel');
-        Route::get('/DataProduct', 'index')->name('DataProductIndex');
-        Route::get('/DataProduct/Create', 'create')->name('DataProductCreate');
-        Route::post('/DataProduct/Store', 'store')->name('DataProductStore');
+        // Route::get('/DataProduct', 'index')->name('DataProductIndex');
+        // Route::get('/DataProduct/Create', 'create')->name('DataProductCreate');
+        // Route::post('/DataProduct/Store', 'store')->name('DataProductStore');
+        // Route::delete('/DataProduct/Destroy/{$product}', 'DataProductController@destroy')->name('DataProductDestroy');
+        // Route::delete('/DataProduct/Delete/{$product}', 'destroy')->name('DataProductDestroy');
+        Route::resource('/DataProduct', DataProductController::class);
     });
 
     Route::controller(PackingReportController::class)->group(function () {

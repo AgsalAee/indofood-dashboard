@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('product_total')->nullable();
             $table->float('product_mix_weight')->nullable();
             $table->float('product_addition_weight')->nullable();
+            $table->float('product_bg_weight')->nullable();
             $table->float('product_si_weight')->nullable();
             $table->float('product_etiquete_weight')->nullable();
             $table->integer('product_RPM')->nullable();

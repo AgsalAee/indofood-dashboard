@@ -3,9 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\MachineGroup;
+use App\Models\ProcessOrder;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Symfony\Component\Process\Process;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +28,7 @@ class DatabaseSeeder extends Seeder
             MachineGroupSeeder::class,
             PackagingPOSeeder::class,
             MachineNumberSeeder::class,
+            ProcessOrderSeeder::class,
             // ScheduleProductionSeeder::class,
         ]);
     }

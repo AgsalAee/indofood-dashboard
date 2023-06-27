@@ -27,6 +27,7 @@ class DataProductFactory extends Factory
             'product_total' => fake()->numberBetween(1000, 3500),
             'product_mix_weight' => fake()->randomFloat(2, 0.01, 16),
             'product_addition_weight' => fake()->randomFloat(2, 0.01, 2),
+            'product_bg_weight' => fake()->randomFloat(2, 0.1, 2),
             'product_si_weight' => fake()->randomFloat(2, 0.01, 2),
             'product_etiquete_weight' => fake()->randomFloat(2, 0.01, 1),
             'product_RPM' => fake()->numberBetween(1000, 3500),

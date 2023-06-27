@@ -14,7 +14,7 @@ class PackagingPOController extends Controller
 {
     public function index()
     {
-        return view('pages/packaging/PackagingPO');
+        return view('pages.packaging.PackagingPO');
     }
 
     public function import_excel(Request $request)
