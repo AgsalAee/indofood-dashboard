@@ -31,4 +31,56 @@
         <a href="/PackagingPO/export_excel" class="bg-sky-600 hover:bg-sky-700 px-5 py-3 text-white rounded-lg"
             target="_blank">EXPORT EXCEL</a>
     </div>
+
+    <div class="relative overflow-x-auto pl-9 pr-9">
+        <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Process Order
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Number SKU
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Shift
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Quantity
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Finish Date
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($pos as $po)
+                    <tr class="bg-white border-b">
+                        <td>{{ $po->po_id }}</td>
+                        <td>{{ $po->number_material }}</td>
+                        <td>{{ $po->shift }}</td>
+                        <td>{{ $po->quantity }}</td>
+                        <td>{{ $po->finish_date }}</td>
+                        <td>
+                            <form action="{{ route('ProcessOrder.destroy', $po->po_id) }}" method="POST">
+                                {{-- <a class="btn btn-info"> show </a> --}}
+                                <a class="btn btn-info" href="{{ route('ProcessOrder.edit', $po->po_id) }}">
+                                    edit
+                                </a>
+                                {{-- <a class="btn btn-info" href="{{ route('products.show', $product->id) }}">Show</a>
+
+                                <a class="btn btn-primary" href="{{ route('products.edit', $product->id) }}">Edit</a> --}}
+
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+            {{ $pos->links() }}
+        </table>
+    </div>
 </x-app-layout>
