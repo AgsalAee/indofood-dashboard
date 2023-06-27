@@ -1,6 +1,6 @@
 <x-app-layout>
-    <div action="{{ route('DataProductCreate') }}">
-        <form action="{{ route('DataProductStore') }}" method="POST">
+    <div action="{{ route('DataProduct.create') }}">
+        <form action="{{ route('DataProduct.store') }}" method="POST">
             @csrf
             <div class="row">
                 <div class="form-group">
@@ -27,7 +27,12 @@
                 <div class="form-group">
                     <strong>Bobot SI dan BG:</strong>
                     <input type="text" name="product_si_weight" class="form-control"
-                        placeholder="Bobot SI dan BG (Jika tidak ada kosongkan/beri 0)">
+                        placeholder="Bobot BG (Jika tidak ada kosongkan/beri 0)">
+                </div>
+                <div class="form-group">
+                    <strong>Bobot SI dan BG:</strong>
+                    <input type="text" name="product_si_weight" class="form-control"
+                        placeholder="Bobot SI (Jika tidak ada kosongkan/beri 0)">
                 </div>
                 <div class="form-group">
                     <strong>Bobot Etiquete:</strong>

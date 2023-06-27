@@ -18,7 +18,7 @@ class PackagingPOImport implements ToModel, WithStartRow
     public function model(array $row)
     {
         return new PackagingPO([
-            'Process' => $row[4] ?? null,
+            'Process_id' => $row[4] ?? null,
             'FinishDate' => Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row[1])),
             'Shift' => $row[2],
             'NumberMaterial' => $row[5],

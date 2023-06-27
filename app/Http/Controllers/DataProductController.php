@@ -33,6 +33,7 @@ class DataProductController extends Controller
             'product_total' => 'required',
             'product_mix_weight' => 'required',
             'product_addition_weight' => 'required',
+            'product_bg_weight' => 'required',
             'product_si_weight' => 'required',
             'product_etiquete_weight' => 'required',
             'product_RPM' => 'required',
@@ -41,14 +42,55 @@ class DataProductController extends Controller
 
         DataProduct::create($request->all());
 
-        return redirect()->route('DataProductIndex')
+        return redirect()->route('DataProduct.index')
             ->with('success', 'Product created successfully.');
     }
 
-    public function show(DataProduct $product): View
+    // public function show(DataProduct $product): View
+    // {
+    //     return view('pages.packaging.DataProduct', compact('product'));
+    // }
+
+    public function edit($product_id): View
     {
-        return view('pages.packaging.DataProduct', compact('product'));
+
+        $product = DataProduct::findOrFail($product_id);
+
+        return view('pages.packaging.DataProduct.edit', compact('product'));
     }
+
+    public function update(Request $request, $product_id): RedirectResponse
+    {
+        $product = DataProduct::findOrFail($product_id);
+
+        $product->update([
+            'product_name' => $request->product_name,
+            'product_total' => $request->product_total,
+            'product_mix_weight' => $request->product_mix_weight,
+            'product_addition_weight' => $request->product_addition_weight,
+            'product_bg_weight' => $request->product_bg_weight,
+            'product_si_weight' => $request->product_si_weight,
+            'product_etiquete_weight' => $request->product_etiquete_weight,
+            'product_RPM' => $request->product_RPM,
+            'product_pitch' => $request->product_pitch,
+        ]);
+
+        return redirect()->route('DataProduct.index')
+            ->with('success', 'Product edited successfully');
+    }
+
+
+    public function destroy($product_id): RedirectResponse
+    {
+        $product = DataProduct::findOrFail($product_id);
+
+        $product->delete();
+
+        return redirect()->route('DataProduct.index')
+            ->with('success', 'Product deleted successfully');
+    }
+
+
 
     public function import_excel(Request $request)
     {

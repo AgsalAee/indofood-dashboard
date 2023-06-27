@@ -23,7 +23,8 @@ class DataProductImport implements ToModel, WithStartRow, WithMultipleSheets
             'product_total' => $row[15],
             'product_mix_weight' => $row[4],
             'product_addition_weight' => $row[6],
-            'product_si_weight' => $row[7],
+            'product_bg_weight' => $row[7],
+            'product_si_weight' => $row[9],
             'product_etiquete_weight' => $row[14],
             'product_RPM' => $row[23],
             'product_pitch' => $row[22]

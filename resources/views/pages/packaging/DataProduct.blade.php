@@ -32,7 +32,7 @@
     </div>
     <div>
         <a class="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
-            href={{ route('DataProductCreate') }}>
+            href={{ route('DataProduct.create') }}>
             <button
                 class="px-4 py-2 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded-md mr-4">
                 create item
@@ -58,7 +58,10 @@
                         Bobot Bumbu
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Bobot Tambahan
+                        Bobot Tambahan (Cabe)
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Bobot Bawang Gor
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Bobot SI
@@ -75,6 +78,9 @@
                     <th scope="col" class="px-6 py-3">
                         Pitch
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                        Keterangan
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -85,11 +91,28 @@
                         <td>{{ $product->product_total }}</td>
                         <td>{{ $mix = $product->product_mix_weight }}</td>
                         <td>{{ $add = $product->product_addition_weight }}</td>
+                        <td>{{ $bg = $product->product_bg_weight }}</td>
                         <td>{{ $si = $product->product_si_weight }}</td>
                         <td>{{ $eq = $product->product_etiquete_weight }}</td>
-                        <td>{{ $tot = $mix + $add + $si + $eq }}</td>
+                        <td>{{ $tot = $mix + $add + $si + $eq + $bg }}</td>
                         <td>{{ $product->product_RPM }}</td>
                         <td>{{ $product->product_pitch }}</td>
+                        <td>
+                            <form action="{{ route('DataProduct.destroy', $product->product_id) }}" method="POST">
+                                {{-- <a class="btn btn-info"> show </a> --}}
+                                <a class="btn btn-info" href="{{ route('DataProduct.edit', $product->product_id) }}">
+                                    edit
+                                </a>
+                                {{-- <a class="btn btn-info" href="{{ route('products.show', $product->id) }}">Show</a>
+
+                                <a class="btn btn-primary" href="{{ route('products.edit', $product->id) }}">Edit</a> --}}
+
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

@@ -13,12 +13,15 @@ class DataProduct extends Model
     // protected $with = ['PackingReports'];
     protected $table = "data_products";
 
+    protected $primaryKey = 'product_id';
+
     protected $fillable = [
         'product_id',
         'product_name',
         'product_total',
         'product_mix_weight',
         'product_addition_weight',
+        'product_bg_weight',
         'product_si_weight',
         'product_etiquete_weight',
         'product_RPM',
@@ -47,5 +50,10 @@ class DataProduct extends Model
     public function MachineNumbers()
     {
         return $this->belongsToMany(MachineNumber::class);
+    }
+
+    public function ProcessOrders()
+    {
+        return $this->belongsTo(ProcessOrder::class);
     }
 }
