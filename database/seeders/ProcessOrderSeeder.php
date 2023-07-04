@@ -6,7 +6,7 @@ use App\Models\ProcessOrder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PackagingPOSeeder extends Seeder
+class ProcessOrderSeeder extends Seeder
 {
     /**
      * Run the database seeds.

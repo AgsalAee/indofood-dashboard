@@ -1,4 +1,7 @@
 const plugin = require('tailwindcss/plugin');
+const colors = require('tailwindcss/colors')
+
+/** @type {import('tailwindcss').Config} */
 
 module.exports = {
     content: [
@@ -6,7 +9,9 @@ module.exports = {
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './node_modules/flowbite/**/*.js',
     ],
+    darkMode: 'class',
 
     theme: {
         extend: {
@@ -23,6 +28,7 @@ module.exports = {
                 inter: ['Inter', 'sans-serif'],
             },
             fontSize: {
+                xxs: ['0.6rem', { lineHeight: '1.25' }],
                 xs: ['0.75rem', { lineHeight: '1.5' }],
                 sm: ['0.875rem', { lineHeight: '1.5715' }],
                 base: ['1rem', { lineHeight: '1.5', letterSpacing: '-0.01em' }],
@@ -58,8 +64,11 @@ module.exports = {
         },
     },
     plugins: [
-        require('@tailwindcss/forms'),
+        require('@tailwindcss/forms')({
+            strategy: 'class',
+          }),
         require('@tailwindcss/typography'),
+        require('flowbite/plugin'),
         // add custom variant for expanding sidebar
         plugin(({ addVariant, e }) => {
             addVariant('sidebar-expanded', ({ modifySelectors, separator }) => {
@@ -67,4 +76,16 @@ module.exports = {
             });
         }),
     ],
+    presets: [
+        // require("./vendor/wireui/wireui/tailwind.config.js"),
+        require("./vendor/power-components/livewire-powergrid/tailwind.config.js"),
+    ],
+    theme: {
+        extend: {
+            colors: {
+                "pg-primary": colors.gray,
+            },
+        },
+    },
+
 };

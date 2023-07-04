@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             DataProductSeeder::class,
             PackingReportSeeder::class,
             MachineGroupSeeder::class,
-            PackagingPOSeeder::class,
+            // PackagingPOSeeder::class,
             MachineNumberSeeder::class,
             ProcessOrderSeeder::class,
             // ScheduleProductionSeeder::class,

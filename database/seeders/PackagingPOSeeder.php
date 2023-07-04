@@ -15,6 +15,6 @@ class PackagingPOSeeder extends Seeder
      */
     public function run()
     {
-        PackagingPO::factory(20)->create();
+        // PackagingPO::factory(20)->create();
     }
 }

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('id_group')->references('group_id')->on('machine_groups');
-            $table->foreign('id_product_code')->references('product_id')->on('data_products');
+            $table->foreign('id_product_code')->references('product_id')->on('data_products')->onDelete('cascade');
         });
     }
 

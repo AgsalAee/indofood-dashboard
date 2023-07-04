@@ -18,7 +18,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-inter antialiased bg-slate-100 text-slate-600" :class="{ 'sidebar-expanded': sidebarExpanded }"
+<body class="font-inter antialiased text-slate-100 bg-slate-800" :class="{ 'sidebar-expanded': sidebarExpanded }"
     x-data="{ sidebarOpen: false, sidebarExpanded: localStorage.getItem('sidebar-expanded') == 'true' }" x-init="$watch('sidebarExpanded', value => localStorage.setItem('sidebar-expanded', value))">
 
     <script>
@@ -49,6 +49,9 @@
     </div>
 
     @livewireScripts
+    <script src="../path/to/flowbite/dist/flowbite.js"></script>
+    {{-- <script src="../path/to/flowbite/dist/datepicker.js"></script> --}}
+    {{-- <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script> --}}
 </body>
 
 </html>

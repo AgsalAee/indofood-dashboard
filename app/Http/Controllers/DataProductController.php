@@ -17,7 +17,7 @@ class DataProductController extends Controller
 
         return view('pages.packaging.DataProduct', compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
-        // return view('DataMaterial');
+        // return view('pages.packaging.DataProduct');
     }
 
     public function create()

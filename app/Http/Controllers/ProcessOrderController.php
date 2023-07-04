@@ -12,11 +12,10 @@ class ProcessOrderController extends Controller
     //
     public function index()
     {
-        $pos = ProcessOrder::latest()->paginate(15);
-
-        return view('pages.packaging.ProcessOrder', compact('pos'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-        // return view('pages.packaging.ProcessOrder');
+        // $pos = ProcessOrder::latest()->paginate(15);
+        // return view('pages.packaging.ProcessOrder', compact('pos'))
+        //     ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('pages.packaging.ProcessOrder');
     }
 
     public function import_excel(Request $request)

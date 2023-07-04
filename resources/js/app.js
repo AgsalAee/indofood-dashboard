@@ -24,6 +24,10 @@ import dashboardCard11 from './components/dashboard-card-11';
 
 // Call Alpine
 window.Alpine = Alpine;
+
+import './../../vendor/power-components/livewire-powergrid/dist/powergrid'
+import './../../vendor/power-components/livewire-powergrid/dist/powergrid.css'
+
 Alpine.start();
 
 

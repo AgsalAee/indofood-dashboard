@@ -33,7 +33,7 @@ class DataProduct extends Model
         'updated_at'
     ];
 
-    protected $casts = [
+    public $casts = [
         'product_id' => 'integer'
     ];
 
